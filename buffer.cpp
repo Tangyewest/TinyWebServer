@@ -13,7 +13,7 @@ size_t Buffer::ReadableBytes() const {
     return writeIndex_ - readIndex_;
 }
 
-// 返回预留空间（已读空间）
+// 返回预留空间
 size_t Buffer::prependableBytes() const {
     return readIndex_;
 }
@@ -48,13 +48,13 @@ void Buffer::retrieveUntil(const char* end) {
     retrieve(end - peek());
 }
 
-// 清空所有内容并重置指针
+// 清空所有内容并重置指针,读写下标归零,在别的函数中会用到
 void Buffer::retrieveAll() {
     memset(buffer_.data(), 0, buffer_.size());
     readIndex_ = writeIndex_ = 0;
 }
 
-// 清空所有内容并返回字符串
+// 取出剩余可读的str
 std::string Buffer::retrieveAllToString() {
     std::string str(peek(), ReadableBytes());
     retrieveAll();
