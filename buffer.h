@@ -34,13 +34,13 @@ public:
        void Append(const std::string& str);
        void Append(const char* str, size_t len);
        void Append(const void* data, size_t len);
-       void Append(const char* str);
+       void Append(const Buffer& buffer);
 
        ssize_t ReadFd(int fd,int* Errno); // 读取fd的内容到buffer
        ssize_t WriteFd(int fd, int* Errno);// 写入buffer的内容到fd
 
 private:
-       char* BeginPtr();
+       char* BeginPtr();// 返回缓冲区首地址
        const char* BeginPtr( ) const;
        void makeSpace(size_t len);// 扩展空间
 
