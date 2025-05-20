@@ -64,7 +64,7 @@ std::string Buffer::retrieveAllToString() {
 }
 
 // 返回写指针位置（const 版本）
-const char* Buffer::BeginWrite() const {
+const char* Buffer::BeginWriteConst() const {
     return &buffer_[writeIndex_];
 }
 

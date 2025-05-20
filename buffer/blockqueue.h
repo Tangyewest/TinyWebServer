@@ -82,7 +82,7 @@ void BlockQueue<T>::clear(){
 template<typename T>
 void BlockQueue<T>::push_back(const T& item){
       // 注意，条件变量需要搭配unique_lock使用
-      unique_lock<mutex> locker(mtx_);
+      unique_lock<mutex> locker(mutex_);
       while(deq_.size() >= capacity_){ // 如果队列满了，生产者就等待
             condProducer_.wait(locker);//暂停生产，等待消费者唤醒生产条件变量
       }
@@ -92,7 +92,7 @@ void BlockQueue<T>::push_back(const T& item){
 
 template<typename T>
 void BlockQueue<T>::push_front(const T& item){
-      unique_lock<mutex> locker(mtx_);
+      unique_lock<mutex> locker(mutex_);
       while(deq_.size() >= capacity_){ // 如果队列满了，生产者就等待
             condProducer_.wait(locker);//暂停生产，等待消费者唤醒生产条件变量
       }

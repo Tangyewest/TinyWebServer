@@ -27,7 +27,7 @@ public:
        void retrieveAll();// 读取所有
        std::string retrieveAllToString();// 读取所有并返回字符串
        
-       const char* BeginWrite() const;
+       const char* BeginWriteConst() const;
        char* BeginWrite();
 
        //根据不同的数据类型，返回不同的值，提升了类的易用性和兼容性。

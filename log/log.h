@@ -9,8 +9,9 @@
 #include <stdarg.h>           
 #include <assert.h>
 #include <sys/stat.h>         
-#include "blockqueue.h"
-#include "buffer.h"
+// #include "blockqueue.h"
+#include "../buffer/blockqueue.h"
+#include "../buffer/buffer.h"
 
 class Log{
 public: 

@@ -91,7 +91,7 @@ void Log::init(int level, const char* path, const char* suffix, int maxQueueSize
         }
         fp_ = fopen(fileName, "a"); // 打开文件读取并附加写入
         if(fp_ == nullptr) {
-            mkdir(path,777);
+            mkdir(path,0777);
             fp_ = fopen(fileName, "a"); // 生成目录文件（最大权限）
         }
         assert(fp_ != nullptr);

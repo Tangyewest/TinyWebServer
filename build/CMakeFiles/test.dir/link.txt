@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/test.dir/test.cpp.o CMakeFiles/test.dir/log/log.cpp.o CMakeFiles/test.dir/poll/sqlconnpoll.cpp.o CMakeFiles/test.dir/buffer/buffer.cpp.o -o test  -lmysqlclient -lpthread 

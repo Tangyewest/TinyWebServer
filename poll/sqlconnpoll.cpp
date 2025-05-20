@@ -1,6 +1,9 @@
 #include "sqlconnpool.h"
 #include "log.h"
 
+SqlConnPool::SqlConnPool() {
+    // 可以初始化成员变量，也可以留空
+}
 
 SqlConnPool* SqlConnPool::Instance(){
     static SqlConnPool poll;

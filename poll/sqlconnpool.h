@@ -37,17 +37,22 @@ public: SqlConnRAII(MYSQL** SQL, SqlConnPool* connpoll){
         *SQL = connpoll->GetConn();
         sql_ = *SQL;
         connpool_ = connpoll;
+        sql_ptr_ = SQL;
     }
     
     ~SqlConnRAII(){
-        if(sql_){
-            connpool_->FreeConn(sql_);
-        }
+    if(sql_){
+        connpool_->FreeConn(sql_);
+        sql_ = nullptr;
+        // 置空外部指针
+        if (sql_ptr_) *sql_ptr_ = nullptr;
     }
+}
 
 private:
     MYSQL* sql_;
     SqlConnPool* connpool_;
+    MYSQL** sql_ptr_;
 };
 
 #endif

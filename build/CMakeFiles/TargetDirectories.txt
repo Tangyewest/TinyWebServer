@@ -1,0 +1,3 @@
+/home/tangye/TinyWebServer/build/CMakeFiles/test.dir
+/home/tangye/TinyWebServer/build/CMakeFiles/edit_cache.dir
+/home/tangye/TinyWebServer/build/CMakeFiles/rebuild_cache.dir
